@@ -12,6 +12,9 @@ def main():
     grade = determine_grade(score)
     print(grade)
 
+    random_grade = random.randint(0, 100)
+    grade = determine_grade(random_grade)
+    print(grade)
 
 def determine_grade(score):
     """Determines grade."""
