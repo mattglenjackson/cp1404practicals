@@ -18,7 +18,6 @@ function main
 
         print MENU
         get choice
-
     print farewell message
 
 
@@ -53,6 +52,7 @@ MENU = "(E)nter score\n(P)rint result\nPrint (S)tar\n(Q)uit"
 
 
 def main():
+    """Score_menu.py main function."""
     score = -1
     print(MENU)
     choice = input(">>> ").upper()
@@ -74,6 +74,7 @@ def main():
 
 
 def get_valid_score():
+    """Get valid score from user."""
     score = int(input("Enter Score: "))
     while score < 0 or score > 100:
         print("Invalid score")
@@ -82,6 +83,7 @@ def get_valid_score():
 
 
 def determine_grade(score):
+    """Determines grade of users score"""
     if score == -1:
         grade = "Please enter a score"
     elif score >= 90:
@@ -94,6 +96,7 @@ def determine_grade(score):
 
 
 def print_stars(score):
+    """Prints line of asterix, score length long"""
     print("*" * score)
 
 
