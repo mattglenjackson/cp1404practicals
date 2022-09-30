@@ -41,7 +41,7 @@ function determine_grade(score):
     return grade
 
 
-print_stars(score)
+function print_stars(score)
     print "*" score times
 
 
@@ -83,7 +83,7 @@ def get_valid_score():
 
 
 def determine_grade(score):
-    """Determines grade of users score"""
+    """Determines grade of users score."""
     if score == -1:
         grade = "Please enter a score"
     elif score >= 90:
@@ -96,7 +96,7 @@ def determine_grade(score):
 
 
 def print_stars(score):
-    """Prints line of asterix, score length long"""
+    """Prints line of asterix, score length long."""
     print("*" * score)
 
 
