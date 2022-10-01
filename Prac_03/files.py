@@ -11,6 +11,8 @@ close in_file
 open out_file called name.txt
 print message with name in out_file
 close out_file
+
+
 """
 
 name = input("Enter Name: ")
@@ -28,7 +30,8 @@ out_file = open(f"{name}.txt", "w")
 print(f"Your name is {name}", file = out_file)
 out_file.close()
 
-in_file = open("numbers.txt", "r")
+FILE_NAME = "numbers.txt"
+in_file = open(FILE_NAME, "r")
 total = 0
 for line in range(2):
     number = int(in_file.readline())
@@ -36,7 +39,7 @@ for line in range(2):
 print(total)
 in_file.close()
 
-in_file = open("numbers.txt", "r")
+in_file = open(FILE_NAME, "r")
 total = 0
 for line in in_file:
     number = int(line)
