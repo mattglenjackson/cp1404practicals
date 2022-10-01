@@ -12,7 +12,22 @@ open out_file called name.txt
 print message with name in out_file
 close out_file
 
+FILE_NAME = numbers.txt
+open FILE_NAME for reading
+total = 0
+for line in range 2
+    number = integer value of line
+    total = total + number
+print total
+close FILE_NAME
 
+open FILE_NAME for reading
+total = 0
+for line in FILE_NAME
+    number = integer value of line
+    total = total + number
+print total
+close FILE_NAME
 """
 
 name = input("Enter Name: ")
