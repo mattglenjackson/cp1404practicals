@@ -27,3 +27,19 @@ in_file.close()
 out_file = open(f"{name}.txt", "w")
 print(f"Your name is {name}", file = out_file)
 out_file.close()
+
+in_file = open("numbers.txt", "r")
+total = 0
+for line in range(2):
+    number = int(in_file.readline())
+    total += number
+print(total)
+in_file.close()
+
+in_file = open("numbers.txt", "r")
+total = 0
+for line in in_file:
+    number = int(line)
+    total += number
+print(total)
+in_file.close()
