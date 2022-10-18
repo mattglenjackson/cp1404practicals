@@ -2,7 +2,7 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
-    """Wimbledon.py main function"""
+    """Wimbledon.py main function."""
     records = get_records(FILENAME)
     countries, champion_to_times_won = process_data(records)
     print_results(countries, champion_to_times_won)
@@ -20,7 +20,7 @@ def get_records(filename):
 
 
 def process_data(records):
-    """Processes data into dictionary and set"""
+    """Processes data into dictionary and set."""
     countries = set()
     champion_to_times_won = {}
     count = 0
