@@ -2,7 +2,7 @@ class Guitar:
     """Represent a guitar object."""
 
     def __init__(self, name='', year=0, cost=0.0):
-        """Construct a guitar."""
+        """Initialize a guitar instance."""
         self.name = name
         self.year = year
         self.cost = cost
@@ -16,6 +16,6 @@ class Guitar:
         current_year = 2022
         return current_year - self.year
 
-    def is_vintage(self, age):
+    def is_vintage(self):
         """Determine if guitar is vintage."""
-        return age >= 50
+        return self.get_age() >= 50
