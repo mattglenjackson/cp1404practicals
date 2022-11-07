@@ -45,4 +45,14 @@ def load_projects(filename):
     return projects
 
 
+def add_project(projects):
+    """Get project details from user and append to list of projects."""
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = input("Priority: ")
+    cost_estimate = float(input("Cost estimate: $"))
+    percent_complete = int(input("Percent complete"))
+    projects.append(Project(name, start_date, priority, cost_estimate, percent_complete))
+
+
 main()
