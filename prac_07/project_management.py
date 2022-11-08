@@ -17,9 +17,10 @@ def main():
     while choice != "Q":
         if choice == "L":
             filename = input("Enter filename: ")
-            load_projects(filename)
+            projects = load_projects(filename)
         elif choice == "S":
-            print("Save Projects")
+            filename = input("Enter filename: ")
+            save_projects(filename, projects)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -80,6 +81,16 @@ def display_projects(projects):
     for project in projects:
         if project.is_completed():
             print(f"  {project}")
+
+
+def save_projects(filename, projects):
+    """Save projects to file."""
+    out_file = open(filename, 'w')
+    for project in projects:
+        print(
+            f"{project.name}\t{project.start_date}\t{project.priority}\t"
+            f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
+    out_file.close()
 
 
 main()
