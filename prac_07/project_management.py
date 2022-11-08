@@ -10,6 +10,7 @@ FILENAME = "projects.txt"
 
 
 def main():
+    """Project management main function."""
     print(MENU)
     projects = load_projects(FILENAME)
     choice = input('>>> ').upper()
@@ -20,8 +21,7 @@ def main():
         elif choice == "S":
             print("Save Projects")
         elif choice == "D":
-            for project in projects:
-                print(project)
+            display_projects(projects)
         elif choice == "F":
             print("Filter Projects by Date")
         elif choice == "A":
@@ -41,7 +41,7 @@ def load_projects(filename):
     in_file.readline()  # Remove header from filename
     for line in in_file:
         parts = line.strip().split("\t")
-        projects.append(Project(parts[0], parts[1], parts[2], parts[3], parts[4]))
+        projects.append(Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4])))
     return projects
 
 
@@ -56,6 +56,7 @@ def add_project(projects):
 
 
 def update_project(projects):
+    """Get choice  from user for which project to update and get values that require updating."""
     for i, project in enumerate(projects):
         print(f"{i} {project}")
 
@@ -65,5 +66,20 @@ def update_project(projects):
     projects[choice].completion_percentage = new_percentage
     new_priority = int(input("New Priority: "))
     projects[choice].priority = new_priority
+
+
+def display_projects(projects):
+    """Display entire list of completed and incomplete projects."""
+    print("Incomplete projects:")
+    # print(project for project in projects if not project.is_completed())
+    for project in projects:
+        if not project.is_completed():
+            print(f"  {project}")
+    print("Completed projects:")
+    # print(project for project in projects if project.is_completed())
+    for project in projects:
+        if project.is_completed():
+            print(f"  {project}")
+
 
 main()
