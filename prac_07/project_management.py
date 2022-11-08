@@ -69,12 +69,12 @@ def update_project(projects):
     choice = int(input("Project Choice: "))
     print(projects[choice])
     new_percentage = input("New Percentage: ")
-    new_percentage = int(new_percentage)  # Not sure if there is a better way to do this exception handling creates loop here and if left as a string it doesn't mark as completed when displayed.
     if new_percentage != "":
+        new_percentage = int(new_percentage) # Not sure if there is a better way to do this as exception handling creates loop here and if left as a string it doesn't mark as completed when displayed.
         projects[choice].completion_percentage = new_percentage
     new_priority = input("New Priority: ")
-    new_priority = int(new_priority)
     if new_priority != "":
+        new_priority = int(new_priority)
         projects[choice].priority = new_priority
 
 
