@@ -11,21 +11,12 @@ class UnreliableCar(Car):
         self.reliability = reliability
 
     def drive(self, distance):
-        """Drive the car a given distance if random generated number is less than reliability
-
-        Drive given distance if car has enough fuel
-        or drive until fuel runs out return the distance actually driven.
-        """
+        """Drive the car a given distance if drive chance is less than reliability."""
 
         drive_chance = randint(0, 100)
         if drive_chance < self.reliability:
-            if distance > self.fuel:
-                distance = self.fuel
-                self.fuel = 0
-            else:
-                self.fuel -= distance
-            self._odometer += distance
-            return distance
+            super().drive(distance)
         else:
             distance = 0
             return distance
+
