@@ -1,0 +1,13 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'vertical'
+        id: entries_box
+        font_size: 50
+    BoxLayout:
+        size_hint_y: 0.3
+        Label:
+            text: app.status_text
+        Button:
+            text: 'Clear'
+            on_press: app.handle_clear()
