@@ -17,8 +17,8 @@ class UnreliableCar(Car):
         or drive until fuel runs out return the distance actually driven.
         """
 
-        random_number = randint(0, 100)
-        if random_number < self.reliability:
+        drive_chance = randint(0, 100)
+        if drive_chance < self.reliability:
             if distance > self.fuel:
                 distance = self.fuel
                 self.fuel = 0
